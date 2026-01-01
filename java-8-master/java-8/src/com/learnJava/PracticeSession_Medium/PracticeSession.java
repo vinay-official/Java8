@@ -219,6 +219,16 @@ public class PracticeSession {
     // convert words to lowercase,
     // filter out empty strings, and count the frequency of each word (Map&lt;String, Long&gt;).
 
+      Map<String, Long> wordCount = Files.lines(Path.of("words.txt"))
+                .flatMap(line -> Arrays.stream(line.split("\\W+")))
+                .map(String::toLowerCase)
+                .filter(word -> !word.isEmpty())
+                .collect(Collectors.groupingBy(
+                        word -> word,
+                        Collectors.counting()
+                ));
+
+
     // 22. Given employees, find the second oldest employee. Return Optional&lt;Employee&gt;.
 
     public Optional<Employee> q22_secondOldestEmployee() {
