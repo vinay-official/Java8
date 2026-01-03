@@ -398,7 +398,17 @@ public class PracticeSessionNew {
 
     public Set&lt;String&gt; q34_uniqueWordsWithAFromFile() throws IOException {
 
-        // TODO: Implement the logic here.
+        // TODO: Implement the logic here.  @vinay
+
+
+    return Files.lines(Paths.get("words.txt"))
+            .flatMap(line -> Arrays.stream(line.split("\\W+")))
+            .map(String::toLowerCase)
+            .filter(word -> word.contains("a"))
+            .map(String::toUpperCase)
+            .collect(Collectors.toCollection(TreeSet::new));
+}
+
 
         return null;
 
