@@ -325,7 +325,13 @@ public class PracticeSessionNew {
 
     public int q30_totalQuantityOfProduct101() {
 
-        // TODO: Implement the logic here.
+        // TODO: Implement the logic here. @vinay
+
+          return orders.stream()
+            .flatMap(order -> order.getItems().stream())
+            .filter(item -> item.getProductId() == 101)
+            .mapToInt(OrderItem::getQuantity)
+            .sum();
 
         return 0;
 
@@ -335,7 +341,9 @@ public class PracticeSessionNew {
 
     public void q31_findEmployeeWith5CharName() {
 
-        // TODO: Implement the logic here.
+        // TODO: Implement the logic here.    @vinay
+
+        
 
     }
 
