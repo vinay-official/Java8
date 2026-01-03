@@ -343,7 +343,15 @@ public class PracticeSessionNew {
 
         // TODO: Implement the logic here.    @vinay
 
-        
+        employees.stream()
+        .filter(e -> e.getName().length() == 5)
+        .findAny()
+        .map(Employee::getName)
+        .ifPresentOrElse(
+                System.out::println,
+                () -> System.out.println("No employee with 5-char name")
+        );
+
 
     }
 
