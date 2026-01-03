@@ -310,7 +310,12 @@ public class PracticeSessionNew {
 
     public OptionalDouble q29_avgStockForApparel() {
 
-        // TODO: Implement the logic here.
+        // TODO: Implement the logic here.   @vinay
+
+        products.stream()
+            .filter(p -> "Apparel".equals(p.getCategory()))
+            .mapToInt(Product::getStock)
+            .average();
 
         return null;
 
