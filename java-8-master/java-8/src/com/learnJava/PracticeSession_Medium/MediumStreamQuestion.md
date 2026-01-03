@@ -359,7 +359,17 @@ public class PracticeSessionNew {
 
     public Map&lt;String, Set&lt;Integer&gt;&gt; q32_productIdsByCategory() {
 
-        // TODO: Implement the logic here.
+        // TODO: Implement the logic here.  @vinay
+
+        Map<String, Set<Integer>> result =
+        products.stream()
+                .collect(Collectors.groupingBy(
+                        Product::getCategory,
+                        Collectors.mapping(
+                                Product::getId,
+                                Collectors.toSet()
+                        )
+                ));
 
         return null;
 
