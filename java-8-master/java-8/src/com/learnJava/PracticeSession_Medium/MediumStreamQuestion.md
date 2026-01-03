@@ -381,12 +381,13 @@ public class PracticeSessionNew {
 
         // TODO: Implement the logic here.    @vinay
 
-        public Optional<Integer> q33_sumAgesWithReduceNoIdentity() {
+       public Optional<Integer> q33_sumAgesWithReduceNoIdentity() {
 
     return employees.stream()
             .map(Employee::getAge)
             .reduce(Integer::sum);
 }
+
 
 
         return null;
