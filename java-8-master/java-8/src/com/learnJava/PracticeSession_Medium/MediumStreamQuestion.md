@@ -379,7 +379,15 @@ public class PracticeSessionNew {
 
     public Optional&lt;Integer&gt; q33_sumAgesWithReduceNoIdentity() {
 
-        // TODO: Implement the logic here.
+        // TODO: Implement the logic here.    @vinay
+
+        public Optional<Integer> q33_sumAgesWithReduceNoIdentity() {
+
+    return employees.stream()
+            .map(Employee::getAge)
+            .reduce(Integer::sum);
+}
+
 
         return null;
 
