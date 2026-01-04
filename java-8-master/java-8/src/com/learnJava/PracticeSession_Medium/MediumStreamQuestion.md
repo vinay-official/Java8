@@ -375,7 +375,8 @@ public class PracticeSessionNew {
 
     }
 
-    // 33. Given employees, calculate the sum of ages of all employees using reduce without an identity value. Return Optional&lt;Integer&gt;.
+    // 33. Given employees, calculate the sum of ages of all employees using reduce without an identity value. 
+           Return Optional&lt;Integer&gt;.
 
     public Optional&lt;Integer&gt; q33_sumAgesWithReduceNoIdentity() {
 
@@ -394,7 +395,8 @@ public class PracticeSessionNew {
 
     }
 
-    // 34. Read words.txt, find all unique words containing the letter 'a' (case-insensitive), convert them to uppercase, and collect them into a sorted Set&lt;String&gt;.
+    // 34. Read words.txt, find all unique words containing the letter 'a' (case-insensitive), convert them to uppercase, and 
+    collect them into a sorted Set&lt;String&gt;.
 
     public Set&lt;String&gt; q34_uniqueWordsWithAFromFile() throws IOException {
 
@@ -414,12 +416,17 @@ public class PracticeSessionNew {
 
     }
 
-    // 35. Given orders, find all customer IDs who have placed at least one order with a total value less than $100. Collect unique IDs into a Set&lt;Integer&gt;.
+    // 35. Given orders, find all customer IDs who have placed at least one order with a total value less than $100. 
+           Collect unique IDs into a Set&lt;Integer&gt;.
 
     public Set&lt;Integer&gt; q35_customersWithCheapOrders() {
 
-        // TODO: Implement the logic here.
-
+        // TODO: Implement the logic here.  @vinay
+        
+         return orders.stream()
+            .filter(order -> order.getTotalValue() < 100)
+            .map(Order::getCustomerId)
+            .collect(Collectors.toSet());
         return null;
 
     }
