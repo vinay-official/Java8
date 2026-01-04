@@ -431,11 +431,18 @@ public class PracticeSessionNew {
 
     }
 
-    // 36. Given employees, use peek to print the salary of each employee before filtering for those earning more than 80000, and then collect their names into a list.
+    // 36. Given employees, use peek to print the salary of each employee before filtering for those earning more than 80000, 
+           and then collect their names into a list.
 
     public List&lt;String&gt; q36_peekAndFilterSalaries() {
 
         // TODO: Implement the logic here.
+        
+        employees.stream()
+        .peek(e -> System.out.println("Salary: " + e.getSalary()))
+        .filter(e -> e.getSalary() > 80000)
+        .map(Employee::getName)
+        .collect(Collectors.toList());
 
         return null;
 
