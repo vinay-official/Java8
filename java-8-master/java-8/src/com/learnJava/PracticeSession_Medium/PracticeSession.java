@@ -401,7 +401,7 @@ public class PracticeSession {
     public List<Integer> q41_numberstartswith1() {
         List<Integer> list = Arrays.asList(10,15,8,49,null,98,132);
         return list.stream()
-                .filter(i -> Objects.nonNull(i))
+                .filter(i -> Objects.nonNull(i))               //Objects.nonNull(i)   equal to    i != null
                 .filter(i -> i.toString().startsWith("1"))
                 .collect(toList());
     }
